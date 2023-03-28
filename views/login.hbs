@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="./img/info/logo.ico">
+<link rel="stylesheet" type="text/css" href="./css/animate.css">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white ;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #37517e ;
+}
+
+.topnav a   {
+  float: left ;
+  color: white ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 200 ;
+}
+#logo{
+  padding: 14px 16px;
+  height: 20px;
+  width: 20px;
+  float: left;
+}
+.topnav a:hover {
+  transform: scale(1.2);
+}
+.topnav a.active:hover {
+    
+  color: white ;
+}
+.topnav a.active {
+    
+  color: #47b2e4 ;
+}
+
+
+.tabcontent{
+  margin-left: 0px ;
+  color: white;
+ 
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#log{
+  float: right ;
+  
+}
+#home{
+  background-color: #37517e;
+  display: flex;
+  flex: 1 ;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height:  657px;
+
+  
+} 
+
+.item{
+ 
+}
+#campname{
+
+  text-align: center;
+  
+  font-size: 25px;
+  justify-content: left;
+}
+@keyframes bounce {
+
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0); }
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+#hero{
+  transform: scale(0.7);
+  animation: bounce 3s infinite;
+
+}
+#getst{
+  font-size: 15px ;
+  width: 150px;
+  color: white;
+  background-color: #47b2e4;
+  font-weight: 600;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+}
+#getst:hover{
+  transform: scale(1.07);
+}
+.boldti{
+  font-size: 30px;
+  font-weight: 800;
+  color: #37517e;
+
+}
+#about{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  
+  color: black ;
+  padding-right: 100px ;
+  padding-left: 100px;
+}
+
+#subabout{
+  
+  display: flex ;
+  flex-direction: row ;
+  justify-content: center;
+    font-size: 26px;
+  color: black ;
+  padding-top: 50px;
+}
+#services{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black ;
+  padding-right: 100px ;
+  padding-left: 100px;
+
+}
+#contact{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black ;
+  padding-right: 20px ;
+  padding-left: 20px;
+
+}
+.outbutton{
+ border : none ;
+  color: white ;
+  background-color:#47b2e4  ;
+  width: 150px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+#ul1{
+  color: #47b2e4 ;
+
+}
+#blue1{
+  color: #47b2e4 ;
+  font-size: 26px ;
+  font-weight: 700;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100% ;
+  padding: 10px ;
+ /* background-color: #002951 ;*/
+  color: #002951  ;
+  background-color: rgb(227, 227, 227);
+  border-radius: 25px ;
+  margin: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  padding: 2px 16px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+
+
+  body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white ;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #37517e ;
+}
+
+.topnav a   {
+  float: left ;
+  color: white ;
+  text-align: center;
+  padding: 14px 6px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 200 ;
+}
+#logo{
+  padding: 14px 3px;
+  height: 14px;
+  width: 14px;
+  float: left;
+}
+
+.topnav a.active:hover {
+    
+  color: white ;
+}
+.topnav a.active {
+    
+  color: #47b2e4 ;
+}
+
+
+.tabcontent{
+  margin-left: 0px ;
+  color: white;
+ 
+}
+
+
+#log{
+  float: right ;
+  
+}
+#home{
+  background-color: #37517e;
+  display: flex;
+  flex: 1 ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height:  657px;
+
+  
+} 
+
+.item{
+ 
+}
+#campname{
+
+  text-align: center;
+  
+  font-size: 25px;
+  justify-content: left;
+}
+@keyframes bounce {
+
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0); }
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+#hero{
+  width : 350px ;
+  animation: bounce 3s infinite;
+
+}
+#getst{
+  font-size: 15px ;
+  width: 150px;
+  color: white;
+  background-color: #47b2e4;
+  font-weight: 600;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+}
+#getst:hover{
+  transform: scale(1.07);
+}
+.boldti{
+  font-size: 20px;
+  font-weight: 800;
+  color: #37517e;
+
+}
+#about{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  
+  color: black ;
+  padding: 0px;
+}
+
+#subabout{
+  
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+    font-size: 14px;
+  color: black ;
+  padding-top: 20px;
+}
+#services{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: black ;
+  padding: 0px;
+
+}
+#contact{
+  display: flex ;
+  flex-direction: column ;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: black ;
+  padding: 0px;
+
+}
+.outbutton{
+ border : none ;
+  color: white ;
+  background-color:#47b2e4  ;
+  width: 100px;
+  margin-left : 5px ;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+#ul1{
+  color: #47b2e4 ;
+
+}
+#blue1{
+  color: #47b2e4 ;
+  font-size:14px ;
+  font-weight: 400;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width:250px;
+  padding: 10px ;
+  
+  color: #002951  ;
+  background-color: rgb(227, 227, 227);
+  border-radius: 25px ;
+ 
+  margin-top: 10px;
+}
+#im11{
+  width : 350px ;
+  animation: bounce 3s infinite;
+
+}
+.card:hover {
+  transform: scale(1.1);
+}
+
+.container {
+  padding: 2px 16px;
+  width: 100%;
+}
+
+}
+
+
+</style>
+</head>
+
+<body>
+<script type="text/javascript">
+
+function openTab(evt, cityName ) {
+
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "flex";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "flex";
+  evt.currentTarget.className += " active";
+}
+
+function openWindow(evt, cityName ) {
+
+
+}
+
+
+</script>
+
+<div class="topnav">
+  
+     <img src="./img/info/logo-social_edited.jpg" id="logo">
+  
+  <a class="tablinks" href="#home" onclick="openTab(event , 'home' )" >Home</a>
+  <a class="tablinks" href="#about" onclick="openTab(event , 'about' ) " >About</a>
+  <a class="tablinks" href="#services" onclick="openTab(event ,'services' )">Services</a>
+  <a class="tablinks" href="#contact" onclick="openTab(event , 'contact' ) " >Contact</a>
+  
+  <a class="tablinks" id="log" href=  "/login" >Login</a>
+  <a class="tablinks" id="log" href=  "/signup"  >Signup</a>
+
+</div>
+
+
+<div id="home" class="tabcontent">
+  
+  <div class="item slide-in-left" id="campname">
+    <h1>Campaign Creator</h1>
+    <p>Join with us to create new campaigns</p>   
+    <button id="getst">Get Started</button>
+  </div>
+  <div class="item  flip-in-ver-left">
+    <img src="./img/info/hero-img.png" class="item" id="hero" >
+  </div>
+  
+</div>
+<div id="about" class="tabcontent">
+  <h1 class="boldti scale-in-center" >ABOUT US</h1>
+  <div id="subabout">
+    <div>
+      <p id="abo">
+        Our mission is to organise the world’s 
+        simplified campaigns  and make it universally available  and useful for every person .
+      </p>
+      <ul id="ul1">
+        <li>Reliable</li>
+        <li>Flexible</li>
+        <li>Cost effective</li>
+      </ul>
+    </div>
+
+    <div>
+      <p id="abo">
+      Building a world where progress, equitable outcomes, diversity,
+       and inclusion can be realities both inside and outside our workplace.
+    </p>
+    <button class="outbutton">
+      Learn more
+    </button>
+    </div>
+    
+  </div>
+
+  <div id="subabout">
+    
+     <div>
+      <p>
+        Our website makes it easier to find volunteer Campaigns donors near your location.
+        Our smart system will find campaigns closer to you and will connect you in a matter of minutes at zero cost.
+      </p>
+      <h2 id="blue1">01 Web based single page application on open source platform.</h2>
+      <h2 id="blue1">02 Preventing wastage of time</h2>
+      <h2 id="blue1">03 Reduced turnaround time.</h2>
+      <h2 id="blue1">04 Networking of Campaigns</h2>
+
+    </div>
+    <div>
+      <img src="./img/info/hero-img.png" id="im11"> 
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="services" class="tabcontent">
+  <h1 class="boldti scale-in-center" >SERVICES</h1>
+  <div id="subabout">
+    <div>
+      <p>
+       The persons who like to join or create campaigns 
+       they Can register in Campaign Creator site as well 
+       as he can modify the details if necessary by using the Login Id and Password.
+      </p>
+      <ul id="ul1">
+        <li>Singlepage Application</li>
+        <li>Using MySQL and MONGODB</li>
+        <li>Creating account by User Authentication</li>
+      </ul>
+    </div>
+
+    <div>
+      <p id="abo">
+      With help of this site webpage application we  can promote their campaigns
+       and can earn maximum response. The persons in need of any campaigns  for 
+       those people this is one of the best site . If he found a campaign in his 
+       nearby  city then he gets the total details of the campaign.
+    </p>
+    <button class="outbutton">
+      Learn more
+    </button>
+    </div>
+    
+  </div>
+
+  <div id="subabout">
+    
+     <div style="width: 50%;">
+    
+      <h2 id="blue1">01 Easy to handle</h2>
+      <h2 id="blue1">02 Mobile friendly</h2>
+      <h2 id="blue1">03 Build trust</h2>
+      <h2 id="blue1">04 Fast loadtime</h2>
+      <h2 id="blue1">05 proper layout</h2>
+
+    </div>
+    <div>
+      <img src="./img/info/hero-img.png" id="im11">
+    </div>
+  </div>
+
+</div>  
+
+
+<div id="contact" class="tabcontent">
+  <h1 class="boldti ">CONTACT</h1>
+  
+  <div id="subabout">
+      <div class="card">
+        <img src="./img/info/rahul.png" alt="Avatar" style="border-radius: 25px; width: 246px ;transform: scale(0.8);">
+        <div class="container">
+          <h4><b>Rahul Gaikwad</b></h4> 
+          <p>Fullstack Developer</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/info/riddhi.jpeg" alt="Avatar" style="border-radius: 25px; width: 240px ;height: 200px; transform: scale(0.8);">
+        <div class="container">
+          <h4><b>Riddhi Wakade</b></h4> 
+          <p>Software Engineer</p> 
+        </div>
+      </div>
+      <div class="card">
+        <img src="./img/info/atharva.jpeg" alt="Avatar" style="border-radius: 25px; width: 240px ;height: 200px; transform: scale(0.8);">
+        <div class="container">
+          <h4><b>Atharva Mestry</b></h4> 
+          <p>UI/UX designer</p> 
+        </div>
+      </div>
+  </div>
+
+
+
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+ // document.getElementById("home").style.display = "flex" ;
+</script>
+</html>

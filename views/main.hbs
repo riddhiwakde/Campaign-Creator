@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./css/main/main.css">
+<link rel="stylesheet" type="text/css" href="./css/main/joincampaign.css">
+<link rel="stylesheet" 
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='../index.js'></script>
+</head>
+
+<body>
+
+
+<div id="mySidenav" class="sidenav">
+  
+  <a class="tablinks" href="#join" onclick="openTab1(event , 'join' ) "  >Join</a>
+  <a class="tablinks" href="#create" onclick="openTab1(event , 'create' ) "  >Create</a>
+  <a class="tablinks" href="#MyCampaigns" onclick="openTab1(event , 'MyCampaigns' )" >MyCampaigns</a>
+  <a class="tablinks" href="#show" onclick="openTab1(event , 'show' ) " >Show</a>
+  <a class="tablinks" href="#myjoin"  onclick="openTab1(event , 'myjoin' ) " >Registered</a>
+  <a class="tablinks" href="#profile" onclick="openTab1(event , 'profile' ) " >
+  <i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  {{{fname}}}{{{lname}}}{{{useremail.fname}}}{{{useremail.lname}}}
+  </a>
+</div>
+
+<div class="topnav">
+	<div class="container" onclick="myFunction(this)" id="bar12">
+  			<div class="bar1"></div>
+  			<div class="bar2"></div>
+ 	 		<div class="bar3"></div>
+	</div>
+
+  <a class="tablinks d-none" href="#join" onclick="openTab(event , 'join' ) " >Join Campaign</a>
+  <a class="tablinks d-none" href="#create" onclick="openTab(event , 'create' ) " >Create campaign</a>
+  <a class="tablinks d-none" href="#MyCampaigns" onclick="openTab(event , 'MyCampaigns' ) "  >MyCampaigns</a>
+  <a class="tablinks d-none" href="#show"  onclick="openTab(event , 'show' ) " >Show</a>
+  <a class="tablinks d-none" href="#myjoin"  onclick="openTab(event , 'myjoin' ) " >Registered</a>
+  <a class="tablinks d-none" href="#profile" onclick="openTab(event , 'profile' ) " 
+  style="float: right;" ><i class='fas fa-user-alt' style='font-size:18px;color:white'></i>
+  {{{fname}}}{{{lname}}}{{{useremail.fname}}}{{{useremail.lname}}}</a>
+</div>
+
+<div id="home" class="tabcontent">
+  This is Home 
+
+</div>
+
+<div id="create" class="tabcontent">
+  <form action="/createcamp" method="POST" >
+      <div id="subjoin">
+        <label class="place1">Campname</label>
+        <input type="text" class="inp" name="campname">
+      </div>
+      <div id="subjoin">
+        <label class="place1">Date of Campaign</label>
+        <input type="Date" class="inp" min="" id="campdate" name="dateofcamp">
+      </div>
+      <div id="subjoin">
+        <label class="place1">Start Time</label>
+        <input type="time" class="inp" name="starttime">
+      </div>
+      <div id="subjoin">
+        <label class="place1">Maximum Members</label>
+        <input type="number" min="0" class="inp" name="maxmemb">
+      </div>
+      <div id="subjoin">
+        <label class="place1">Address</label>
+        <input type="text" class="inp" name="Address">
+      </div>
+      <div id="subjoin">
+        <label class="place1">Location</label>
+        <div id="googleMap" ></div>
+      </div>
+      <button type="submit">Create</button>
+  </form>
+</div>
+
+<div id="join" class="tabcontent">
+
+  <div id="join1">
+      <div id="subjoin">
+        <form action="/findcamp" method="POST" style="display: inline-flex; width : 100%">
+        <input type="text" name="campid" placeholder="Enter Campaign ID">
+        <select>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+          <option>Kp east</option>
+        </select>
+        <button type="submit" class="search1" style="background-color: white;border:none;"><i class="fa fa-search search" ></i></button>
+        </form>
+      </div>
+  </div>
+
+  {{#each listall}}
+  <form action="/joincamp" method="POST" >
+  <div id="join1">
+    <div id="subjoin">
+      <div id="" class="campaign">
+        <img src="./img/info/hero-img.png" style="width:40%;">
+        <div class="subcamp">
+          <div class="subsubcamp">
+              <label class="ite">CampId</label>
+              <label class="ite11" name="campname11">{{this.campname}}</label>
+              <input type="text" name="campid11" value="{{this.campname}}" 
+              style="display: none; " />
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Address</label>
+              <label class="ite11">{{this.address}}</label>
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Registered seats</label>
+              <label class="ite11">{{this.maxmemb}}</label>
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Date</label>
+              <label class="ite11">{{this.date}}</label>
+              <input type="text" name="date11" value="{{this.date}}" 
+              style="display: none; " />
+          </div>
+        </div>
+        <button>Join</button>
+      </div>
+    </div>
+  </div>
+  </form>
+  {{/each}}
+
+  
+
+</div>
+
+<div id="about" class="tabcontent">
+  This is about
+</div>
+
+<div id="MyCampaigns" class="tabcontent">
+    {{#each listcam}}
+    <div id="join1">
+    <div id="subjoin">
+      <div id="" class="campaign">
+        <img src="./img/info/hero-img.png" style="width:40%;">
+        <div class="subcamp">
+          <div class="subsubcamp">
+              <label class="ite">CampId</label>
+              <label class="ite11">{{this.campname}}</label>
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Address</label>
+              <label class="ite11">{{this.address}}</label>
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Registered Members</label>
+              <label class="ite11">{{this.maxmemb}}</label>
+          </div>
+          <div class="subsubcamp">
+              <label class="ite">Date</label>
+              <label class="ite11">{{this.date}}</label>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <button style="margin-top: 10px;" onclick="openTab(event , 'show' )">Show</button>
+          <button style="margin-top: 10px;" id="rzp-button1">Approved</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<div id="show" class="tabcontent">
+    
+    <div id="join1" style="width:100%;">
+      <form action="/showcamp" method="POST" style="display: inline-flex; width : 80%">
+        
+        <select name="camp22">
+          {{#each listcam}}
+          <option>{{this.campname}}</option>
+          {{/each}}
+        </select>
+        <button type="submit" class="search1" style="background-color: white;border:none;"><i class="fa fa-search search" ></i></button>
+    </form>
+      <table class="table1">
+        <tr>
+          <th class="d-none">Name</th>
+          <th class="d-none">Email</th>
+          <th>Username</th>
+          <th>Status</th>
+        </tr>
+        {{#each listshow}}
+        <tr>
+          <form action="/mark_done" method="POST" >
+          <td  class="d-none">{{this.fname}} {{this.lname}}</td>
+          <td  class="d-none">{{this.email}}</td>
+          <td>{{this.username}}</td>
+          <td>{{this.status}}</td>
+          <input name="email" value="{{this.email}}" style="display: none;" >
+          <input name="username" value="{{this.username}}" style="display: none;" >
+          <input name="campname" value="{{this.campname}}" style="display: none;" >
+          <td><button type="submit" style="background-color: white;border:none;
+            padding:0px;margin:0px">
+            <i class="fa {{this.status}}" ></i></button></td>
+          </form>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+</div>
+
+<div id="myjoin" class="tabcontent">
+    
+    <div id="join1" style="width:100%;">
+      <form action="/registered" method="POST" style="display: inline-flex; width : 80%">
+        
+        <select name="camp22" >
+          {{#each listcam}}
+          <option>{{this.campname}}</option>
+          {{/each}}
+        </select>
+        <button type="submit" style="background-color: white;border:none;display: none;"><i class="fa fa-search search" ></i></button>
+    </form>
+      <table class="table1">
+        <tr>
+          <th>Campname</th>
+          <th>Date</th>
+          <th>Status</th>
+        </tr>
+        {{#each listreg}}
+        <tr>
+          <td>{{this.campname}}</td>
+          <td>{{this.date}}</td>
+          <td>{{this.status}}</td>
+          
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+</div>
+
+<div class="tabcontent" id="profile" >
+      <div id="subjoin">
+        <label class="place1">Username</label>
+        <label class="place2">{{useremail.username}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">Email</label>
+        <label class="place2">{{useremail.email}}</label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">Name</label>
+        <label class="place2">{{useremail.fname}} {{useremail.mname}} {{useremail.lname}} </label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">Gender</label>
+        <label class="place2">{{useremail.gender}} </label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">Address</label>
+        <label class="place2" style="text-transform: lowercase;">{{useremail.address}} </label>
+      </div>
+      <div id="subjoin">
+        <label class="place1">Bloodgroup</label>
+        <label class="place2">{{useremail.bloodgroup}}</label>
+      </div>
+      
+      
+</div>
+
+
+
+</body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+    "key": "rzp_test_vOv0OJnGBqB5wd", // Enter the Key ID generated from the Dashboard
+    "amount": "5000", 
+    "currency": "INR",
+    "name": "Acme Corp",
+    "description": "Test Transaction",
+    "image": "https://example.com/your_logo",
+    "order_id": "order_9A33XWu170gUtm", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+    "handler": function (response){
+        alert(response.razorpay_payment_id);
+        alert(response.razorpay_order_id);
+        alert(response.razorpay_signature)
+    },
+    "prefill": {
+        "name": "rahul gaikwad",
+        "email": "rahulkishorgaikwad@example.com",
+        "contact": "9999999999"
+    },
+    "notes": {
+        "address": "Razorpay Corporate Office"
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        alert(response.error.source);
+        alert(response.error.step);
+        alert(response.error.reason);
+        alert(response.error.metadata.order_id);
+        alert(response.error.metadata.payment_id);
+});
+document.getElementById('rzp-button1').onclick = function(e){
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+<script>
+var today = new Date();
+var dd = today.getDate();
+dd=dd+2
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+ if(dd<10){
+        dd='0'+dd
+    } 
+    if(mm<10){
+        mm='0'+mm
+    } 
+
+today = yyyy+'-'+mm+'-'+dd;
+document.getElementById("campdate").setAttribute("min", today);
+var flag_sidenav = 0 ; 
+function myFunction(x) {
+  x.classList.toggle("change");
+  if(flag_sidenav == 0 )
+  {
+    openNav() ; 
+    
+  }
+  else
+  {
+    closeNav() ; 
+    
+  }
+  
+}
+function openNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("home").style.marginLeft = "250px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "250px";
+  }
+  flag_sidenav = 1 ;
+}
+
+function closeNav() {
+  var tabcontent = document.getElementsByClassName("tabcontent");
+  document.getElementById("mySidenav").style.width = "0px";
+  document.getElementById("home").style.marginLeft = "0px";
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.marginLeft = "0px";
+  }
+  flag_sidenav = 0 ;
+}
+function openTab1(evt, cityName ) {
+
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "flex";
+  myFunction(document.getElementById("bar12"));
+  evt.currentTarget.className += " active";
+}
+
+
+function openTab(evt, cityName ) {
+
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  document.getElementById(cityName).style.display = "flex";
+  evt.currentTarget.className += " active";
+}
+
+
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(19.0825223,72.7411011),
+  zoom:10,
+};
+var mapProp1= {
+  center:new google.maps.LatLng(19.0825223,72.7411011),
+  zoom:10,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var map1 = new google.maps.Map(document.getElementById("googleMap1"), mapProp1);
+
+}
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8GNWHrquoLwpYWD70bQ9lBtXC2pzAoX0&callback=myMap"></script>
+
+<script type="text/javascript">
+  document.getElementById("{{{showdiv}}}").style.display = "flex" ;
+</script>
+</html>
